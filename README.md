@@ -1,0 +1,2 @@
+# lulus_bareng
+ 
