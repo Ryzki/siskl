@@ -1,0 +1,43 @@
+04 MARET 2024
+- Fix tampilan mobile agar lebih responsive
+- Fix BUG pada upload image 
+- Perkuat security
+
+7 MEI 2023
+- Add Nama Aplikasi di Identitas
+
+5 MEI 2023
+- FIX LOGO
+
+4 MEI 2023
+- FIX Countdown
+- FIX BUG
+
+29 MARET 2023
+- FIX BUG
+
+26 MARET 2023
+- Perbaikan bug
+- Perbaikan Import excel
+- Perbaikan Setting Suket
+- Penambahan Countdown pengumuman (jadwal pengumuman) yang akan muncul di Home
+
+
+26 FEBRUARY 2023
+- perbaikan bug
+
+30 DESEMBER 2022
+- Penambahan fitur cetak transkrip nilai di lihat nilai
+- perbaikan data siswa & nilai
+- perbaikan page not found cek nilai
+
+1 DESEMBER 2022
+- Penambahan Fitur backup database di menu Identitas Sekolah
+- Saat tambah user baru, jika username/nama sudah ada, maka akan muncul pesan error
+
+30 NOVEMBER 2022
+- Penambahan Column role di Database. diharapkan import baru file sql/database.
+- Perbaikan bug dan tampilan
+- Perbaikan datatable di menu data siswa dan data nilai
+- File excel tebaru untuk import data siswa dan nilai
+- format tanggal di bawah no ujian (tabel data siswa)
