@@ -10,7 +10,7 @@
                 </div>
                 <div id="timerWraper" class="col-lg-6 align-self-baseline visually-hidden">
                     <div class="alert alert-dismissable alert-danger">
-                        <h4>Pendaftaran dibuka dalam</h4>
+                        <h4>Pengumuman dibuka dalam</h4>
                         <h6 id="timer"></h6>
                     </div>
                 </div>
