@@ -1,3 +1,7 @@
+24 MARET 2024
+- Fix BUG
+- Fix Upload Image
+
 04 MARET 2024
 - Fix tampilan mobile agar lebih responsive
 - Fix BUG pada upload image 
