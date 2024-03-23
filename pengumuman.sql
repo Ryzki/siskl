@@ -11,7 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -40,8 +39,7 @@ CREATE TABLE `identitas` (
   `telpon` varchar(50) NOT NULL,
   `logo` varchar(128) NOT NULL,
   `prov` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 --
 -- Dumping data untuk tabel `identitas`
 --
@@ -59,7 +57,7 @@ CREATE TABLE `jadwal` (
   `id` int NOT NULL,
   `waktu` datetime NOT NULL,
   `tahun_ajaran` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `jadwal`
@@ -131,7 +129,7 @@ CREATE TABLE `setting` (
   `nomor_sk2` varchar(50) NOT NULL,
   `nomor_sk3` year NOT NULL,
   `tanggal_sk` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `setting`

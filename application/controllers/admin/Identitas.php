@@ -61,7 +61,7 @@ class Identitas extends CI_Controller
     {
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = 2048;
-        $config['upload_path'] = FCPATH . 'assets\img\logo';
+        $config['upload_path'] = FCPATH . 'assets/img/logo';
         $config['encrypt_name'] = TRUE;
         $this->load->library('upload');
         $res = $this->upload->initialize($config);
