@@ -7,29 +7,29 @@
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/boostrap.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/cetak.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <!-- <img class="image1" src="<?= base_url('assets/img/logo/') ?>sumsel.png" height="80" /> -->
-    <table align="center">
+    <table width="100%">
         <tr>
-            <td width="25"><img class="image1" src="<?= base_url('assets/img/logo/') ?>sumsel.png" height="80" /></td>
-            <td>
-                <div align="center">
-                    <font size="4"><b><?= $setting['kop1'] ?></b></font><br>
-                    <font size="4"><b><?= $setting['kop2'] ?></b></font><br>
-                    <font size="4"><b><?= $setting['kop3'] ?></b></font><br>
-                    <font size="2"><?= $identitas['alamat'] ?><br>
-                        E-mail: <?= $identitas['email'] ?> Website: <?= $identitas['website'] ?></font><br>
-                </div>
+            <td align="left">
+                <img class="image1" src="<?= base_url('assets/img/logo/') . $identitas['prov'] ?>" height="80" />
             </td>
-            <td align="center"><img class="image2" src="<?= base_url('assets/img/logo/') . $identitas['logo'] ?>" height="80" /></td>
-            <div style="clear:both">
+            <td align="center">
+                <font size="4"><b><?= $setting['kop1'] ?></b></font><br>
+                <font size="4"><b><?= $setting['kop2'] ?></b></font><br>
+                <font size="4"><b><?= $setting['kop3'] ?></b></font><br>
+                <font size="2"><?= $identitas['alamat'] ?><br>
+                    E-mail: <?= $identitas['email'] ?> Website: <?= $identitas['website'] ?></font><br>
+            </td>
+            <td align="right">
+                <img class="image2" src="<?= base_url('assets/img/logo/') . $identitas['logo'] ?>" height="80" />
+            </td>
         </tr>
     </table>
-    <!-- <img class="image2" src="<?= base_url('assets/img/logo/') . $identitas['logo'] ?>" height="80" /> -->
+
     <hr class="line-title">
 
     <div class="konten">
@@ -67,6 +67,12 @@
                 </tr>
 
                 <tr>
+                    <td width="120">NISN</td>
+                    <td>:</td>
+                    <td colspan="2"><b><?= $siswa['nisn'] ?> </td>
+                </tr>
+
+                <tr>
                     <td colspan="1" width="120">Tempat Lahir</td>
                     <td>:</td>
                     <td colspan="2"><b> <?= $siswa['tmptlhr'] ?></b> </td>
@@ -75,19 +81,13 @@
                 <tr>
                     <td width="120">Tanggal Lahir</td>
                     <td width="10">:</td>
-                    <td colspan="2"><b><?= date('d M Y', strtotime($siswa['tgllhr'])) ?></b> </td>
+                    <td colspan="2"><b><?= tanggal($siswa['tgllhr']) ?></b> </td>
                 </tr>
 
                 <tr>
                     <td width="120">Jenis Kelamin</td>
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['jk'] ?> </td>
-                </tr>
-
-                <tr>
-                    <td width="120">NISN</td>
-                    <td>:</td>
-                    <td colspan="2"><b><?= $siswa['nisn'] ?> </td>
                 </tr>
 
                 <tr>
@@ -108,6 +108,7 @@
                 </tr>
             </table>
         </div>
+
         <div>
             <table align="center">
                 <tr>
@@ -132,16 +133,17 @@
                 </tr>
             </table>
         </div>
-
-        <div>
-            <table align="center">
-                <tr>
-                    <td colspan="4"><br>
-                        Demikian surat keterangan ini dibuat sebagai pengganti ijazah sementara yang sedang dalam proses penulisan.
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <?php if ($siswa['ket'] == "lulus") : ?>
+            <div>
+                <table align="center">
+                    <tr>
+                        <td colspan="4"><br>
+                            Demikian surat keterangan ini dibuat sebagai pengganti ijazah sementara yang sedang dalam proses penulisan.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <?php endif; ?>
 
         <div class="ttd">
             <table align="right">
@@ -162,9 +164,7 @@
             </table>
         </div>
     </div>
-    <script type="text/javascript">
-        window.print();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@
     </div>
 </footer>
 <!-- Bootstrap core JS-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 <script src="https://use.fontawesome.com/a0e094e156.js"></script>
@@ -35,36 +36,6 @@
         }
     }, 1000)
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- kirim pesan -->
-<script>
-    $(document).ready(function() {
-        $("#contact").on("submit", function(event) {
-            event.preventDefault(); // Mencegah form dari submit secara default
-            var form = $(this);
-
-            $.ajax({
-                url: form.attr("action"),
-                method: form.attr("method"),
-                data: form.serialize(),
-                dataType: "json",
-                success: function(response) {
-                    // Berhasil
-                    $("#SuccessMessage").removeClass("d-none"); // Tampilkan pesan berhasil
-                    $("#ErrorMessage").addClass("d-none"); // Sembunyikan pesan error
-                    form.trigger("reset"); // Reset form
-                },
-                error: function() {
-                    // Error
-                    $("#SuccessMessage").addClass("d-none"); // Sembunyikan pesan berhasil
-                    $("#ErrorMessage").removeClass("d-none"); // Tampilkan pesan error
-                }
-            });
-        });
-    });
-</script>
-
 
 </script>
 </div> <!-- END: Modal Content -->

@@ -14,8 +14,6 @@ class Nilai_model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
-
-
     function get_nilai_by_noujian($noujian)
     {
         $query = "SELECT *
@@ -29,12 +27,19 @@ class Nilai_model extends CI_Model
 
     function get_siswa_by_noujian($noujian)
     {
-
         $query = "SELECT *
                     FROM `siswa`
                     WHERE `noujian` = '$noujian'
         ";
+        return $this->db->query($query)->row_array();
+    }
 
+    function get_siswa_by_nisn($nisn)
+    {
+        $query = "SELECT *
+                    FROM `siswa`
+                    WHERE `nisn` = '$nisn'
+        ";
         return $this->db->query($query)->row_array();
     }
 }

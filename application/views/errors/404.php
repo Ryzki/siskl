@@ -25,9 +25,9 @@
             </div>
             <div class="text-white mt-10 lg:mt-0">
                 <div class="intro-x text-8xl font-medium">Not Found</div>
-                <div class="intro-x text-xl lg:text-3xl font-medium mt-5">Oops. No Ujian yang Anda</div>
+                <div class="intro-x text-xl lg:text-3xl font-medium mt-5">Oops. No NISN</div>
                 <div class="intro-x text-xl lg:text-3xl font-medium mt-0">Masukan Tidak Benar!</div>
-                <div class="intro-x text-lg mt-3">Silahkan untuk kembali dan mencoba lagi masukan no ujian yang benar.</div>
+                <div class="intro-x text-lg mt-3">Silahkan untuk kembali dan mencoba lagi masukan no NISN yang benar.</div>
                 <a href="<?= site_url('./') ?>" class="intro-x btn py-3 px-4 text-white border-white dark:border-darkmode-400 dark:text-slate-200 mt-10">Kembali ke Home</a>
             </div>
         </div>

@@ -81,7 +81,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= site_url('admin/jadwal') ?>" class="side-menu <?= active_menu('pesan') ?>">
+                <a href="<?= site_url('admin/jadwal') ?>" class="side-menu <?= active_menu('jadwal') ?>">
                     <div class="side-menu__icon"> <i data-lucide="calendar"></i> </div>
                     <div class="side-menu__title">
                         Jadwal
@@ -93,6 +93,14 @@
                     <div class="side-menu__icon"> <i data-lucide="file-text"></i> </div>
                     <div class="side-menu__title">
                         Setting Suket
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('admin/pesan') ?>" class="side-menu <?= active_menu('pesan') ?>">
+                    <div class="side-menu__icon"> <i data-lucide="message-square"></i> </div>
+                    <div class="side-menu__title">
+                        Pesan Masuk
                     </div>
                 </a>
             </li>

@@ -8,8 +8,8 @@ class Ceklulus extends CI_Controller
         $this->load->model('Home_model');
         $data['identitas'] = $this->Home_model->get_identitas()->row_array();
         $data['jadwal'] = $this->Home_model->get_jadwal()->row_array();
-        $id = $this->input->get('noujian');
-        $this->db->where("siswa.noujian", $id);
+        $id = $this->input->get('nisn');
+        $this->db->where("siswa.nisn", $id);
         $res = $this->db->get("siswa");
 
         if ($res->num_rows() == 1) {

@@ -16,8 +16,8 @@
                 </div>
                 <div id="formWraper" class="col-lg-6 align-self-baseline visually-hidden">
                     <form action="<?= site_url('cek') ?>" novalidate>
-                        <input class="form-control mb-0" id="noujian" name="noujian" type="text" placeholder="Masukan Nomor Ujian" data-sb-validations="required" required />
-                        <p class="text-white-75 mb-3">Masukan Nomor Ujian Contoh: 204-2138-32428-0</p>
+                        <input class="form-control mb-0" id="noujian" name="nisn" type="text" placeholder="Masukan Nomor Induk Siswa Nasional (NISN)" data-sb-validations="required" required />
+                        <p class="text-white-75 mb-3">Masukan Nomor NISN Contoh: 1234509876</p>
                         <button type="submit" id="cek-lulus" class="cek-lulus btn btn-primary btn-xl">Cek Kelulusan</button>
                     </form>
                 </div>
@@ -51,46 +51,45 @@
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <!-- <form id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
-                <form id="contact" method="post" action="<?= base_url('pesan') ?>">
+                <form id="kontakPesan" method="post" action="<?= base_url('pesan') ?>">
                     <!-- Name input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                        <label for="name">Full name</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        <label for="name">Nama Lengkap</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Diperlukan sebuah nama.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="whatsapp" id="whatsapp" type="text" placeholder="Enter your whatsapp..." data-sb-validations="required" />
+                        <label for="whatsapp">No WhatsApp</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Diperlukan whatsapp.</div>
                     </div>
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        <label for="email">Alamat Email</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">Diperlukan email.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email tidak benar.</div>
                     </div>
                     <!-- Message input-->
                     <div class="form-floating mb-3">
                         <textarea class="form-control" name="message" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                        <label for="message">Message</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        <label for="message">Pesan</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Diperlukan pesan.</div>
                     </div>
                     <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
                     <div class="d-none" id="SuccessMessage">
                         <div class="text-center mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
+                            <div class="fw-bolder" id="successMessageText"></div>
                             Thank you!
                         </div>
                     </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
                     <!-- an error submitting the form-->
-                    <div class="d-none" id="ErrorMessage">
-                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3" id="errorMessageText"></div>
                     </div>
                     <!-- Submit Button-->
                     <div class="d-grid">
-                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-xl" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

@@ -12,12 +12,9 @@ class Cetak extends CI_Controller
 
     public function index()
     {
-        $noujian = $this->input->get('noujian');
-        // $this->db->where(['nilai.noujian' => $noujian]);
-        // $this->db->join('siswa', 'siswa.noujian=nilai.noujian');
-        // $res = $this->db->get('nilai');
-        $data['judul'] = "Cetak Surat Keterangan Lulus";
-        $data['siswa'] = $this->Nilai_model->get_siswa_by_noujian($noujian);
+        $nisn = $this->input->get('nisn');
+        $data['judul'] = "Cetak Surat Keterangan Kelulusan";
+        $data['siswa'] = $this->Nilai_model->get_siswa_by_nisn($nisn);
         $data['identitas'] = $this->Home_model->get_identitas()->row_array();
         $data['setting'] = $this->Home_model->get_setting()->row_array();
 

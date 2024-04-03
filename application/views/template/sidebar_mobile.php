@@ -79,6 +79,14 @@
                     <div class="menu__title"> Setting Suket </div>
                 </a>
             </li>
+            <li>
+                <a href="<?= site_url('admin/pesan') ?>" class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="message-square"></i> </div>
+                    <div class="side-menu__title">
+                        Pesan Masuk
+                    </div>
+                </a>
+            </li>
             <li class="menu__devider my-6"></li>
             <li>
                 <a href="<?= site_url('admin/auth/logout') ?>" class="menu">

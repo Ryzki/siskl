@@ -6,7 +6,7 @@
 }
 
 .ttd {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #table {
@@ -47,15 +47,4 @@
     border: 0;
     border-style: inset;
     border-top: 3px solid #000;
-}
-
-.image1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.image2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }

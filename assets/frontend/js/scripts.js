@@ -57,3 +57,34 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+$(document).ready(function() {
+    $("#kontakPesan").submit(function(event) {
+        event.preventDefault(); // Mencegah form dari submit secara default
+        var form = $(this);
+
+        $.ajax({
+            url: form.attr("action"),
+            method: form.attr("method"),
+            data: form.serialize(),
+            dataType: "json",
+            success: function(response) {
+                if (response.status == 200) {
+                    $("#SuccessMessage").removeClass("d-none");
+                    $("#submitErrorMessage").addClass("d-none");
+                    $("#successMessageText").text(response.message);
+                    form.trigger("reset");
+                } else {
+                    $("#SuccessMessage").addClass("d-none");
+                    $("#submitErrorMessage").removeClass("d-none");
+                    $("#errorMessageText").text(response.message);
+                }
+            },
+            error: function() {
+                $("#SuccessMessage").addClass("d-none");
+                $("#submitErrorMessage").removeClass("d-none");
+                $("#errorMessageText").text("Error sending message!");
+            }
+        });
+    });
+});
