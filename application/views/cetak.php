@@ -182,21 +182,21 @@
         <div class="align-items-center justify-content-center">
             <table align="center">
                 <tr>
-                    <td colspan="1" width="150">Nama</td>
+                    <td colspan="1" width="70">Nama</td>
                     <td>:</td>
-                    <td colspan="2"><b> <?= $siswa['name'] ?></b> </td>
+                    <td colspan="2"> <b> <?= $siswa['name'] ?></b> </td>
                 </tr>
 
                 <tr>
-                    <td width="150">NISN</td>
+                    <td width="70">NISN</td>
                     <td>:</td>
-                    <td colspan="2"><b><?= $siswa['nisn'] ?> </td>
+                    <td colspan="2"> <b><?= $siswa['nisn'] ?> </td>
                 </tr>
 
                 <tr>
-                    <td width="150">Kelas</td>
+                    <td width="70">Kelas</td>
                     <td>:</td>
-                    <td colspan="2"><b><?= $siswa['jurusan'] ?> </td>
+                    <td colspan="2"> <b><?= $siswa['jurusan'] ?> </td>
                 </tr>
             </table>
         </div>
