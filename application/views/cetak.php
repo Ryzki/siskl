@@ -45,6 +45,129 @@
             </table>
         </div>
 
+        <div>
+            <table align="center">
+                <tr>
+                    <td colspan="4"><br><br>
+                        Yang bertanda tangan di bawah ini, Kepala <?= $identitas['nama_sekolah'] ?> dengan ini menerangkan bahwa :
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="align-items-center justify-content-center">
+            <table align="center">
+                <tr>
+                    <td colspan="1" width="150">Nama</td>
+                    <td>:</td>
+                    <td colspan="2"><b> <?= $siswa['name'] ?></b> </td>
+                </tr>
+
+                <tr>
+                    <td width="150">NISN</td>
+                    <td>:</td>
+                    <td colspan="2"><b><?= $siswa['nisn'] ?> </td>
+                </tr>
+
+                <tr>
+                    <td width="150">Tempat dan Tanggal Lahir</td>
+                    <td width="10">:</td>
+                    <td colspan="2"><b><?= $siswa['tmptlhr'] . ', ' . tanggal($siswa['tgllhr']) ?></b> </td>
+                </tr>
+
+                <tr>
+                    <td width="150">Jenis Kelamin</td>
+                    <td>:</td>
+                    <td colspan="2"><b><?= $siswa['jk'] ?> </td>
+                </tr>
+
+                <tr>
+                    <td width="150">Kelas</td>
+                    <td>:</td>
+                    <td colspan="2"><b><?= $siswa['jurusan'] ?> </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table align="center">
+                <tr>
+                    <td colspan="4"><br>
+                        Telah menyelesaikan seluruh kompetensi pembelajaran dan telah mengikuti ujian sekolah (US) dan berdasarkan hasil rapat dewan guru maka peserta didik diatas dinyatakan :
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table align="center">
+                <tr>
+                    <td colspan="4"><br>
+                        <div align="center">
+                            <?php if ($siswa['ket'] == "lulus") : ?>
+                                <img src="<?= base_url('assets/img/') ?>lulus.jpg" alt="lulus" height="30">
+                            <?php else : ?>
+                                <img src="<?= base_url('assets/img/') ?>tidaklulus.jpg" alt="tidaklulus" height="30">
+                            <?php endif; ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table align="center">
+                <tr>
+                    <td colspan="4"><br>
+                        dari satuan <?= $identitas['nama_sekolah'] ?> berdasarkan pengumuman kelulusan Nomor : <?= $setting['nomor_sk'] ?>/<?= $setting['nomor_sk2'] ?>/<?= $setting['nomor_sk3'] ?> tanggal <?= $setting['tanggal_sk'] ?>.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <?php if ($siswa['ket'] == "lulus") : ?>
+            <div>
+                <table align="center">
+                    <tr>
+                        <td colspan="4"><br>
+                            Demikian surat keterangan ini dibuat sebagai pengganti ijazah sementara yang sedang dalam proses penulisan.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <?php else : ?>
+            <div>
+                <table align="center">
+                    <tr>
+                        <td colspan="4"><br>
+                            "Kegagalan bukanlah akhir dari perjalananmu. Teruslah berusaha, belajar dari kesalahan, dan percaya bahwa kesuksesanmu ada di ujung jalan. Jangan pernah menyerah, karena setiap langkahmu membawamu lebih dekat kepada impianmu."
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <?php endif; ?>
+
+        <div class="ttd">
+            <table align="right">
+                <tr>
+                    <td><br></td>
+                    <td></td>
+                    <td colspan="2"><br>
+
+                        <div><?= $setting['alamat'] ?>, <?= $setting['tanggal_sk']  ?><br>
+                            Kepala Sekolah,<br><br><br><br><br>
+                            <b><?= $identitas['kepsek'] ?></b><br>
+                            NIP. <?= $identitas['nip'] ?>
+                        </div>
+
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="page-break"></div>
+
         <div class="align-items-center justify-content-center mt-4">
             <table align="center">
                 <tr>
@@ -87,35 +210,9 @@
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['jurusan'] ?> </td>
                 </tr>
-
             </table>
         </div>
 
-        <div>
-            <table align="center">
-                <tr>
-                    <td colspan="4"><br>
-                        telah menyelesaikan seluruh kompetensi pembelajaran dan telah mengikuti ujian sekolah (US) dan berdasarkan hasil rapat dewan guru maka peserta didik diatas dinyatakan :
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div>
-            <table align="center">
-                <tr>
-                    <td colspan="4"><br>
-                        <div align="center">
-                            <?php if ($siswa['ket'] == "lulus") : ?>
-                                <img src="<?= base_url('assets/img/') ?>lulus.jpg" alt="lulus" height="30">
-                            <?php else : ?>
-                                <img src="<?= base_url('assets/img/') ?>tidaklulus.jpg" alt="tidaklulus" height="30">
-                            <?php endif; ?>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
         <div>
             <table class="table table-bordered">
                 <thead>
@@ -137,46 +234,26 @@
                         <tr>
                             <td style="text-align: center; vertical-align: middle;"><?= $no++; ?></td>
                             <td><?= $row['nama_mapel'] ?></td>
-                            <td><?= $row['nilai_sekolah'] ?></td>
-                            <td><?= $row['nilai_un'] ?></td>
-                            <td><?= $row['nilai_akhir'] ?></td>
+                            <td style="text-align: center;"><?= $row['nilai_sekolah'] ?></td>
+                            <td style="text-align: center;"><?= $row['nilai_un'] ?></td>
+                            <td style="text-align: center;"><?= $row['nilai_akhir'] ?></td>
                         </tr>
                     <?php endforeach ?>
                     <tr>
                         <td style="text-align: center;" colspan="2">Jumlah</td>
-                        <td><?= $jml_sekolah ?></td>
-                        <td><?= $jml_un ?></td>
-                        <td><?= $jml_ua ?></td>
+                        <td style="text-align: center;"><?= $jml_sekolah ?></td>
+                        <td style="text-align: center;"><?= $jml_un ?></td>
+                        <td style="text-align: center;"><?= $jml_ua ?></td>
                     </tr>
                     <tr>
                         <td style="text-align: center;" colspan="2">Rata - rata</td>
-                        <td><?= $rata_sekolah; ?></td>
-                        <td><?= $rata_un; ?></td>
-                        <td><?= $rata_ua; ?></td>
+                        <td style="text-align: center;"><?= $rata_sekolah; ?></td>
+                        <td style="text-align: center;"><?= $rata_un; ?></td>
+                        <td style="text-align: center;"><?= $rata_ua; ?></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div>
-            <table align="center">
-                <tr>
-                    <td colspan="4"><br>
-                        dari satuan <?= $identitas['nama_sekolah'] ?> berdasarkan pengumuman kelulusan Nomor : <?= $setting['nomor_sk'] ?>/<?= $setting['nomor_sk2'] ?>/<?= $setting['nomor_sk3'] ?> tanggal <?= $setting['tanggal_sk'] ?>.
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <?php if ($siswa['ket'] == "lulus") : ?>
-            <div>
-                <table align="center">
-                    <tr>
-                        <td colspan="4"><br>
-                            Demikian surat keterangan ini dibuat sebagai pengganti ijazah sementara yang sedang dalam proses penulisan.
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        <?php endif; ?>
 
         <div class="ttd">
             <table align="right">

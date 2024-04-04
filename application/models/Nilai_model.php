@@ -49,8 +49,7 @@ class Nilai_model extends CI_Model
         $this->db->from('nilai');
         $this->db->where('noujian', $noujian);
         $query = $this->db->get();
-        $result = $query->row()->jml_sekolah / 100;
-        return number_format($result, 2, ',', '.');
+        return $query->row()->jml_sekolah;
     }
 
     public function jml_un($noujian)
@@ -59,8 +58,7 @@ class Nilai_model extends CI_Model
         $this->db->from('nilai');
         $this->db->where('noujian', $noujian);
         $query = $this->db->get();
-        $result = $query->row()->jml_un / 100;
-        return number_format($result, 2, ',', '.');
+        return $query->row()->jml_un;
     }
 
     public function jml_ua($noujian)
@@ -69,8 +67,7 @@ class Nilai_model extends CI_Model
         $this->db->from('nilai');
         $this->db->where('noujian', $noujian);
         $query = $this->db->get();
-        $result = $query->row()->jml_ua / 100;
-        return number_format($result, 2, ',', '.');
+        return $query->row()->jml_ua;
     }
 
     public function rata_sekolah($noujian)

@@ -48,3 +48,6 @@
     border-style: inset;
     border-top: 3px solid #000;
 }
+.page-break {
+    page-break-after: always; /* Mengatur agar halaman baru dimulai setelah elemen dengan kelas .page-break */
+}
