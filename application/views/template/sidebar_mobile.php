@@ -80,9 +80,9 @@
                 </a>
             </li>
             <li>
-                <a href="<?= site_url('admin/pesan') ?>" class="side-menu">
-                    <div class="side-menu__icon"> <i data-lucide="message-square"></i> </div>
-                    <div class="side-menu__title">
+                <a href="<?= site_url('admin/pesan') ?>" class="menu">
+                    <div class="menu__icon"> <i data-lucide="message-square"></i> </div>
+                    <div class="menu__title">
                         Pesan Masuk
                     </div>
                 </a>

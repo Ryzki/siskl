@@ -14,11 +14,11 @@
                 <form action="<?= base_url('admin/importsiswa') ?>" enctype="multipart/form-data" method="post">
                     <div class="preview">
                         <div>
-                            <label for="vertical-form-1" class="form-label">Pilih File Excel* :</label>
+                            <label for="siswa" class="form-label">*Pilih File Excel :</label>
                             <input class="form-control" type="file" name="siswa" id="siswa">
                         </div>
                         <p class="mt-3">* file yang bisa di import adalah .xls | .csv | .xlsx.</p>
-                        <p class="mt-3">* download contoh file excel <a class="text-success" href="<?= base_url('assets/uploads/siswa.xlsx') ?>">Download</a></p>
+                        <p class="mt-3">* download format file excel <a class="text-success" href="<?= base_url('assets/uploads/siswa.xlsx') ?>">Download</a></p>
                         <p class="text-danger">* Jangan lupa hapus header di file excel setelah mengedit / input data, kemudian disave dan diimport.</p>
                         <button type="submit" class="btn btn-primary mt-5">Save Changes</button>
                         <a href="<?= site_url('admin/datasiswa') ?>" class="btn btn-outline-secondary">Lihat Data Siswa</a>

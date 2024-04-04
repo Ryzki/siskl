@@ -86,6 +86,12 @@
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['jurusan'] ?> </td>
                 </tr>
+
+                <tr>
+                    <td width="70">No Ujian</td>
+                    <td>:</td>
+                    <td colspan="2"> <b><?= $siswa['noujian'] ?> </td>
+                </tr>
             </table>
         </div>
 
@@ -188,15 +194,21 @@
                 </tr>
 
                 <tr>
+                    <td width="70">Kelas</td>
+                    <td>:</td>
+                    <td colspan="2"> <b><?= $siswa['jurusan'] ?> </td>
+                </tr>
+
+                <tr>
                     <td width="70">NISN</td>
                     <td>:</td>
                     <td colspan="2"> <b><?= $siswa['nisn'] ?> </td>
                 </tr>
 
                 <tr>
-                    <td width="70">Kelas</td>
+                    <td width="70">No Ujian</td>
                     <td>:</td>
-                    <td colspan="2"> <b><?= $siswa['jurusan'] ?> </td>
+                    <td colspan="2"> <b><?= $siswa['noujian'] ?> </td>
                 </tr>
             </table>
         </div>
@@ -216,28 +228,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1;
+                    <?php
+                    $no = 1;
                     foreach ($nilai as $row) :
                     ?>
                         <tr>
                             <td style="text-align: center; vertical-align: middle;"><?= $no++; ?></td>
                             <td><?= $row['nama_mapel'] ?></td>
-                            <td style="text-align: center;"><?= $row['nilai_sekolah'] ?></td>
-                            <td style="text-align: center;"><?= $row['nilai_un'] ?></td>
-                            <td style="text-align: center;"><?= $row['nilai_akhir'] ?></td>
+                            <td style="text-align: center;"><?= empty($row['nilai_sekolah']) ? 0 : $row['nilai_sekolah']; ?></td>
+                            <td style="text-align: center;"><?= empty($row['nilai_un']) ? 0 : $row['nilai_un']; ?></td>
+                            <td style="text-align: center;"><?= empty($row['nilai_akhir']) ? 0 : $row['nilai_akhir']; ?></td>
                         </tr>
                     <?php endforeach ?>
                     <tr>
                         <td style="text-align: center;" colspan="2">Jumlah</td>
-                        <td style="text-align: center;"><?= $jml_sekolah ?></td>
-                        <td style="text-align: center;"><?= $jml_un ?></td>
-                        <td style="text-align: center;"><?= $jml_ua ?></td>
+                        <td style="text-align: center;"><?= empty($jml_sekolah) ? 0 : $jml_sekolah ?></td>
+                        <td style="text-align: center;"><?= empty($jml_un) ? 0 : $jml_un ?></td>
+                        <td style="text-align: center;"><?= empty($jml_ua) ? 0 : $jml_ua ?></td>
                     </tr>
                     <tr>
                         <td style="text-align: center;" colspan="2">Rata - rata</td>
-                        <td style="text-align: center;"><?= $rata_sekolah; ?></td>
-                        <td style="text-align: center;"><?= $rata_un; ?></td>
-                        <td style="text-align: center;"><?= $rata_ua; ?></td>
+                        <td style="text-align: center;"><?= empty($rata_sekolah) ? 0 : $rata_sekolah ?></td>
+                        <td style="text-align: center;"><?= empty($rata_un) ? 0 : $rata_un ?></td>
+                        <td style="text-align: center;"><?= empty($rata_ua) ? 0 : $rata_ua ?></td>
                     </tr>
                 </tbody>
             </table>

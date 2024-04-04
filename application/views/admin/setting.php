@@ -66,7 +66,7 @@
                         <?= form_error('kop3', '<small class="text-danger" pl-3>', '</small>'); ?>
                     </div>
                     <div class="mt-3">
-                        <label for="vertical-form-2" class="form-label">Alamat</label>
+                        <label for="vertical-form-2" class="form-label">Kota</label>
                         <input id="alamat" name="alamat" type="text" class="form-control" value="<?= $setting['alamat']; ?>">
                         <?= form_error('alamat', '<small class="text-danger" pl-3>', '</small>'); ?>
                     </div>

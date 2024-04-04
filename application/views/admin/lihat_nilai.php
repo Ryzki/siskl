@@ -5,10 +5,11 @@
     <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60">
         <h2 class="font-medium text-base mr-auto">
             <b>Nama : <?= $siswa['name'] ?></b><br>
-            <b>No. Ujian : <?= $siswa['noujian'] ?></b><br>
-            <b>Kelas : <?= $siswa['jurusan'] ?></b>
+            <b>Kelas : <?= $siswa['jurusan'] ?></b><br>
+            <b>NISN : <?= $siswa['nisn'] ?></b><br>
+            <b>No. Ujian : <?= $siswa['noujian'] ?></b>
         </h2>
-        <a href="#" class="btn btn-success shadow-md mr-2"><i class="mr-2" data-lucide="printer"></i> Cetak Nilai</a>
+        <!-- <a href="#" class="btn btn-success shadow-md mr-2"><i class="mr-2" data-lucide="printer"></i> Cetak Nilai</a> -->
         <a href="<?= site_url('admin/datanilai') ?>" class="btn btn-primary shadow-md mr-2">Kembali</a>
     </div>
     <div class="p-5" id="striped-rows-table">

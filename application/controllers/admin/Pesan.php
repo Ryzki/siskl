@@ -33,4 +33,12 @@ class Pesan extends CI_Controller
         }
         redirect('admin/pesan');
     }
+
+    public function deletepesan($id)
+    {
+        $this->db->where('id_pesan', $id);
+        $this->db->delete('pesan');
+        $this->session->set_flashdata('message', '<div class="alert alert-success intro-x" role="alert">Data Telah Terhapus!</div>');
+        redirect('admin/pesan');
+    }
 }

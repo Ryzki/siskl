@@ -7,18 +7,18 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
                 <h2 class="font-medium text-base mr-auto">
-                    Upload CSV
+                    Upload Excel
                 </h2>
             </div>
             <div id="vertical-form" class="p-5">
                 <form action="<?= base_url('admin/importnilai') ?>" enctype="multipart/form-data" method="post">
                     <div class="preview">
                         <div>
-                            <label for="vertical-form-1" class="form-label">Pilih File Excel* :</label>
+                            <label for="vertical-form-1" class="form-label">*Pilih File Excel :</label>
                             <input class="form-control" type="file" name="nilai" id="nilai">
                         </div>
                         <p class="mt-3">* file yang bisa di import adalah .xls | .csv | .xlsx.</p>
-                        <p class="mt-3">* download contoh file excel <a class="text-success" href="<?= base_url('assets/uploads/nilai.xlsx') ?>">Download</a></p>
+                        <p class="mt-3">* download format file excel <a class="text-success" href="<?= base_url('assets/uploads/nilai.xlsx') ?>">Download</a></p>
                         <p class="text-danger">* Jangan lupa hapus header di file excel setelah mengedit / input data, kemudian disave dan diimport.</p>
                         <button type="submit" class="btn btn-primary mt-5">Save Changes</button>
                         <a href="<?= site_url('admin/datanilai') ?>" class="btn btn-outline-secondary">Lihat Data Nilai</a>

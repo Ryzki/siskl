@@ -9,7 +9,7 @@
     </div>
 </div>
 <!-- BEGIN: HTML Table Data -->
-<div class="intro-y box p-5 mt-5">
+<div class="intro-y box p-5 mt-5 overflow-x-auto">
     <table id="table-data" class="table table-report -mt-2">
         <thead>
             <tr>

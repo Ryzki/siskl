@@ -6,11 +6,11 @@
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
         <a href="javascript:;" data-tw-toggle="modal" data-tw-target="#add" class="btn btn-primary shadow-md mr-2">Tambah Siswa Manual</a>
         <a href="<?= site_url('admin/importsiswa') ?>" class="btn btn-success shadow-md mr-2">Import Siswa</a>
-        <a onclick="return confirm('Yakin ingin hapus?')" href="<?= site_url('admin/datasiswa/hapussiswa') ?>" class="btn btn-danger shadow-md mr-2">Hapus Siswa</a>
+        <button type="button" data-tw-toggle="modal" data-tw-target="#deleteall" class="btn btn-danger shadow-md mr-2">Hapus Semua Siswa</button>
     </div>
 </div>
 <!-- BEGIN: HTML Table Data -->
-<div class="intro-y box p-5 mt-5">
+<div class="intro-y box p-5 mt-5 overflow-x-auto">
     <table id="table-data" class="table table-report -mt-2">
         <thead>
             <tr>
@@ -71,7 +71,7 @@
                         <input id="noujian" name="noujian" type="text" class="form-control" placeholder="146-2346-2342" required>
                     </div>
                     <div class="col-span-12 sm:col-span-6">
-                        <label for="modal-form-1" class="form-label">NISN (Nomor induk siswa nasional)</label>
+                        <label for="modal-form-1" class="form-label">NISN</label>
                         <input id="nisn" name="nisn" type="text" class="form-control" placeholder="435354" required>
                     </div>
                     <div class="col-span-12 sm:col-span-6">
@@ -128,29 +128,27 @@
 </div> <!-- END: Modal Content -->
 
 <!-- BEGIN: Delete Confirmation Modal -->
-<?php foreach ($siswa as $s) : ?>
-    <div id="delete-siswa" class="modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <div class="p-5 text-center">
-                        <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
-                        <div class="text-3xl mt-5">Apa kamu yakin?</div>
-                        <div class="text-slate-500 mt-2">
-                            Apakah Anda benar-benar ingin menghapus data ini?
-                            <br>
-                            Proses ini tidak dapat dibatalkan.
-                        </div>
+<div id="deleteall" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="p-5 text-center">
+                    <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+                    <div class="text-3xl mt-5">Apa kamu yakin?</div>
+                    <div class="text-slate-500 mt-2">
+                        Apakah Anda benar-benar ingin menghapus data ini?
+                        <br>
+                        Proses ini tidak dapat dibatalkan.
                     </div>
-                    <div class="px-5 pb-8 text-center">
-                        <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                        <a class="btn btn-danger w-24" href="<?= site_url('admin/datasiswa/hapussiswa') ?>">Delete</a>
-                    </div>
+                </div>
+                <div class="px-5 pb-8 text-center">
+                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                    <a class="btn btn-danger w-24" href="<?= site_url('admin/datasiswa/hapussiswa') ?>">Delete</a>
                 </div>
             </div>
         </div>
     </div>
-<?php endforeach; ?>
+</div>
 <!-- END: Delete Confirmation Modal -->
 
 <!-- BEGIN: Delete Confirmation Modal -->
