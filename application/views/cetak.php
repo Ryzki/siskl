@@ -194,18 +194,6 @@
                 </tr>
 
                 <tr>
-                    <td width="150">Tempat dan Tanggal Lahir</td>
-                    <td width="10">:</td>
-                    <td colspan="2"><b><?= $siswa['tmptlhr'] . ', ' . tanggal($siswa['tgllhr']) ?></b> </td>
-                </tr>
-
-                <tr>
-                    <td width="150">Jenis Kelamin</td>
-                    <td>:</td>
-                    <td colspan="2"><b><?= $siswa['jk'] ?> </td>
-                </tr>
-
-                <tr>
                     <td width="150">Kelas</td>
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['jurusan'] ?> </td>
