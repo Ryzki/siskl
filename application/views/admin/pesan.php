@@ -3,6 +3,9 @@
     <h2 class="text-lg font-medium mr-auto">
         <?= $title; ?>
     </h2>
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+        <a onclick="return confirm('Yakin ingin hapus?')" href="<?= site_url('admin/pesan/delete') ?>" class="btn btn-danger shadow-md mr-2">Hapus Semua Pesan</a>
+    </div>
 </div>
 <!-- BEGIN: HTML Table Data -->
 <div class="intro-y box p-5 mt-5">

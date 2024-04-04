@@ -42,4 +42,61 @@ class Nilai_model extends CI_Model
         ";
         return $this->db->query($query)->row_array();
     }
+
+    public function jml_sekolah($noujian)
+    {
+        $this->db->select('SUM(CAST(nilai_sekolah AS UNSIGNED)) AS jml_sekolah');
+        $this->db->from('nilai');
+        $this->db->where('noujian', $noujian);
+        $query = $this->db->get();
+        $result = $query->row()->jml_sekolah / 100;
+        return number_format($result, 2, ',', '.');
+    }
+
+    public function jml_un($noujian)
+    {
+        $this->db->select('SUM(CAST(nilai_un AS UNSIGNED)) AS jml_un');
+        $this->db->from('nilai');
+        $this->db->where('noujian', $noujian);
+        $query = $this->db->get();
+        $result = $query->row()->jml_un / 100;
+        return number_format($result, 2, ',', '.');
+    }
+
+    public function jml_ua($noujian)
+    {
+        $this->db->select('SUM(CAST(nilai_akhir AS UNSIGNED)) AS jml_ua');
+        $this->db->from('nilai');
+        $this->db->where('noujian', $noujian);
+        $query = $this->db->get();
+        $result = $query->row()->jml_ua / 100;
+        return number_format($result, 2, ',', '.');
+    }
+
+    public function rata_sekolah($noujian)
+    {
+        $this->db->select('FORMAT(AVG(CAST(nilai_sekolah AS UNSIGNED)), 2) AS rata_sekolah');
+        $this->db->from('nilai');
+        $this->db->where('noujian', $noujian);
+        $query = $this->db->get();
+        return $query->row()->rata_sekolah;
+    }
+
+    public function rata_un($noujian)
+    {
+        $this->db->select('FORMAT(AVG(CAST(nilai_un AS UNSIGNED)), 2) AS rata_un');
+        $this->db->from('nilai');
+        $this->db->where('noujian', $noujian);
+        $query = $this->db->get();
+        return $query->row()->rata_un;
+    }
+
+    public function rata_ua($noujian)
+    {
+        $this->db->select('FORMAT(AVG(CAST(nilai_akhir AS UNSIGNED)), 2) AS rata_ua');
+        $this->db->from('nilai');
+        $this->db->where('noujian', $noujian);
+        $query = $this->db->get();
+        return $query->row()->rata_ua;
+    }
 }

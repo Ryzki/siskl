@@ -1,3 +1,9 @@
+4 APRIL 2024
+- FIX BUG
+- PENCAHARIAN KELULUSAN MENGGUNAKAN NISN (NEW)
+- TAMBAH NILAI PADA CETAK SKL
+- YANG TIDAK LULUS DAPAT CETAK SKL BESERTA NILAINYA
+
 24 MARET 2024
 - Fix BUG
 - Fix Upload Image
@@ -25,7 +31,6 @@
 - Perbaikan Import excel
 - Perbaikan Setting Suket
 - Penambahan Countdown pengumuman (jadwal pengumuman) yang akan muncul di Home
-
 
 26 FEBRUARY 2023
 - perbaikan bug

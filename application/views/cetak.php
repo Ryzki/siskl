@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/boostrap.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/cetak.css">
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/css/cetak.css') ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -61,37 +59,31 @@
         <div class="align-items-center justify-content-center">
             <table align="center">
                 <tr>
-                    <td colspan="1" width="120">Nama</td>
+                    <td colspan="1" width="150">Nama</td>
                     <td>:</td>
                     <td colspan="2"><b> <?= $siswa['name'] ?></b> </td>
                 </tr>
 
                 <tr>
-                    <td width="120">NISN</td>
+                    <td width="150">NISN</td>
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['nisn'] ?> </td>
                 </tr>
 
                 <tr>
-                    <td colspan="1" width="120">Tempat Lahir</td>
-                    <td>:</td>
-                    <td colspan="2"><b> <?= $siswa['tmptlhr'] ?></b> </td>
-                </tr>
-
-                <tr>
-                    <td width="120">Tanggal Lahir</td>
+                    <td width="150">Tempat dan Tanggal Lahir</td>
                     <td width="10">:</td>
-                    <td colspan="2"><b><?= tanggal($siswa['tgllhr']) ?></b> </td>
+                    <td colspan="2"><b><?= $siswa['tmptlhr'] . ', ' . tanggal($siswa['tgllhr']) ?></b> </td>
                 </tr>
 
                 <tr>
-                    <td width="120">Jenis Kelamin</td>
+                    <td width="150">Jenis Kelamin</td>
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['jk'] ?> </td>
                 </tr>
 
                 <tr>
-                    <td width="120">Kelas</td>
+                    <td width="150">Kelas</td>
                     <td>:</td>
                     <td colspan="2"><b><?= $siswa['jurusan'] ?> </td>
                 </tr>
@@ -122,6 +114,47 @@
                         </div>
                     </td>
                 </tr>
+            </table>
+        </div>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; vertical-align: middle;" rowspan="2">No</th>
+                        <th style="text-align: center; vertical-align: middle;" rowspan="2">Mata Pelajaran</th>
+                        <th style="text-align: center;" colspan="3">Nilai</th>
+                    </tr>
+                    <tr>
+                        <th>NS</th>
+                        <th>UN</th>
+                        <th>NA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 1;
+                    foreach ($nilai as $row) :
+                    ?>
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle;"><?= $no++; ?></td>
+                            <td><?= $row['nama_mapel'] ?></td>
+                            <td><?= $row['nilai_sekolah'] ?></td>
+                            <td><?= $row['nilai_un'] ?></td>
+                            <td><?= $row['nilai_akhir'] ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                    <tr>
+                        <td style="text-align: center;" colspan="2">Jumlah</td>
+                        <td><?= $jml_sekolah ?></td>
+                        <td><?= $jml_un ?></td>
+                        <td><?= $jml_ua ?></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="2">Rata - rata</td>
+                        <td><?= $rata_sekolah; ?></td>
+                        <td><?= $rata_un; ?></td>
+                        <td><?= $rata_ua; ?></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <div>

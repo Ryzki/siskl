@@ -9,33 +9,33 @@
     margin-top: 50px;
 }
 
-#table {
+.table {
     font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
     border-collapse: collapse;
     width: 100%;
     font-size: 12px;
+    margin-top: 30px;
 }
 
-#table td,
-#table th {
+.table td,
+.table th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#table tr:nth-child(even) {
+.table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#table tr:hover {
+.table tr:hover {
     background-color: #ddd;
 }
 
-#table tr th {
+.table tr th {
     text-align: center;
 }
 
-#table th {
+.table th {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: left;
